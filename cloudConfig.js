@@ -7,7 +7,11 @@ cloudinary.config({
     api_key: process.env.CLOUD_API_KEY,
     api_secret: process.env.CLOUD_API_SECRET,
 });
-
+console.log("Cloudinary Config:", {
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET ? "Exists" : "Missing",
+});
 // Configure Cloudinary Storage
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
